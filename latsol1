@@ -11,15 +11,17 @@ int main(){
     if (n > 0) {
       positif++;
     } else if (n < 0) {
-      negatif++;
+        negatif++;
+    }
   cin >> n;
   }
   cout << "jumlah bil positif : " << positif << endl;
   cout << "jumlah bil negatif : " << negatif << endl;
   if (positif > negatif){
-    cout << "positif lebih besar"
+      cout << "positif lebih besar" << endl;
   } else if (negatif > positif) {
-    cout << "negatif lebih besar"
+      cout << "negatif lebih besar" << endl;
   } else {
-    cout << "seimbang"
+      cout << "seimbang" << endl;
+  }
 }
