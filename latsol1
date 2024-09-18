@@ -1,0 +1,25 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+  int n;
+  int positif = 0, negatif = 0;
+
+  cin >> n;
+  while (n != 0) {
+    if (n > 0) {
+      positif++;
+    } else if (n < 0) {
+      negatif++;
+  cin >> n;
+  }
+  cout << "jumlah bil positif : " << positif << endl;
+  cout << "jumlah bil negatif : " << negatif << endl;
+  if (positif > negatif){
+    cout << "positif lebih besar"
+  } else if (negatif > positif) {
+    cout << "negatif lebih besar"
+  } else {
+    cout << "seimbang"
+}
