@@ -1,0 +1,18 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+    int n, max, total = 0;
+    
+    cin >> n;
+    while (n != 0) {
+        if (n % 2 == 0 && n >= max) {
+            total++;
+            max = n;
+        }
+    }
+    cout << "total bil genap: " << " " << total << endl;
+    cout << "bil genap max: " << " " << max << endl;
+    
+}
