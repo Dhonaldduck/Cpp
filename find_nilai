@@ -1,0 +1,62 @@
+#include <iostream>
+// Mengimpor library standar input/output agar bisa menggunakan fungsi seperti cin dan cout
+using namespace std;
+
+const int NMAX = 51;
+// Mendefinisikan konstanta NMAX untuk membatasi jumlah maksimal data mahasiswa seperti contoh 51
+
+struct mahasiswa {  /*tipe bentukan untuk menyimpan data mahasiswa di dalamnya */
+    string NIM, nama;  // NIM dan nama mahasiswa bertipe string
+    int nilai; // Nilai mahasiswa bertipe integer
+};
+
+using arrayMahasiswa = mahasiswa[NMAX];
+// array dari struct mahasiswa dengan ukuran NMAX.
+
+// Fungsi untuk mencari index mahasiswa pertama dengan NIM tertentu
+int nilaiPertama(arrayMahasiswa T, int N, string NIM){
+    int idx = -1;  // Variabel idx diinisialisasi dengan -1 untuk menunjukkan bahwa data belum ditemukan.
+    for (int i = 0; i < N; i++) { // perulangan untuk mencari NIM di dalam array dari index 0 hingga N-1.
+        if (T[i].NIM == NIM) {
+            // Jika ditemukan mahasiswa dengan NIM yang dicari maka..
+            idx = i; // Simpan index pertama
+            break;   // Keluar dari loop jika ditemukan
+        }
+    }
+    return idx; // Mengembalikan index dari mahasiswa yang pertama kali ditemukan
+}
+
+int main() {
+//    data mahasiswa yang disimpan dalam bentuk array
+    arrayMahasiswa T = {
+               {"114", "Nana", 97},
+               {"113", "Jojo", 70},
+               {"118", "Rere", 88},
+               {"116", "Koko", 40},
+               {"117", "Keke", 90},
+               {"116", "Koko", 60},
+               {"113", "Jojo", 50},
+               {"113", "Jojo", 80},
+               {"118", "Rere", 88},
+               {"119", "Roro", 100}
+           };
+    
+    int N = 10; // Jumlah data mahasiswa di dalam array
+    int idx;  // Variabel untuk menyimpan hasil index yang ditemukan dari fungsi nilaiPertama
+    string NIM;  // Variabel untuk menyimpan input NIM dari pengguna
+    
+    // Meminta input NIM yang akan dicari
+    cout << "Masukkan NIM yang dicari: ";
+    cin >> NIM;
+    
+    // Cari index pertama mahasiswa dengan NIM yang dicari dari memanggil function sebelumnya
+    idx = nilaiPertama(T, N, NIM);
+    
+    if (idx == -1) {  // Jika idx == -1, berarti mahasiswa dengan NIM tersebut tidak ditemukan.
+        cout << "Mahasiswa dengan NIM " << NIM << " tidak ditemukan.\n";
+    } else { // Jika ditemukan, cetak nilai pertama dari mahasiswa dengan NIM tersebut.
+        cout << "Nilai pertama mahasiswa dengan NIM " << NIM << " adalah: " << T[idx].nilai << endl;
+    }
+    return 0;
+//    program berakhir
+}
