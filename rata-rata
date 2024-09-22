@@ -1,0 +1,34 @@
+#include <iostream>
+//  header
+using namespace std;
+// standard library untuk penggunaan semua elemen
+int main(){
+    int n, jumlah = 0, total = 0;
+//    mendeklarasikan variabel jumlah dan total yang di assign dengan nol, serta n sebagai suatu bilangan masukan
+    float average;
+//    variabel rata-rata sebagai akumulasi bilangan masukan bertipe float
+    cin >> n;
+//    input n sebagai masukan
+    while (n != -999) {
+//  pengkondisian untuk mengakhiri perulangan input masukkan jika n di input dengan angka -999
+        jumlah = jumlah + n;
+//        variabel penampung semua bilangan input dengan menjumlahkan semua bilangan
+        total++;
+//        penampung banyaknya input yang dimasukkan
+        cin >> n;
+//        input kembali n
+    }
+    average = float(jumlah)/float(total);
+//    mencari rata rata dengan mengubah tipe data variabel jumlah dan total menjadi float lalu variabel total membagi variabel jumlah
+        if (total == 0) {
+//          kondisi apabila total masukkan nol atau tidak ada
+            cout << "0" << endl;
+//            maka cetak string "0"
+        } else {
+//            kondisi bila terdapat masukan maka eksekusi baris selanjutnya
+            cout << average << endl;
+//            cetak nilai rata-rata yang telah dicari dari variabel average
+        }
+    return 0;
+//    mengembalikan nilai 0
+}
