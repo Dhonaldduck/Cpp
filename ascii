@@ -1,0 +1,18 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+    int num;
+    
+    cout << "masukkan bilangan dari 0-127" << endl;
+    cin >> num;
+    
+    if (num >= 0 && num <= 127) {
+        char asciiChar = static_cast<char>(num);
+        cout << "karakter ASCII dari bilangan " << num << " adalah " << asciiChar << endl;
+    } else {
+        cout << "bilangan diluar rentang karakter ASCII (0-127)" << endl;
+    }
+    return 0;
+}
