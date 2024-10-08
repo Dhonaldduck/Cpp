@@ -1,0 +1,119 @@
+//
+//  list.cpp
+//  tpmod4
+//
+//  Created by Dhona Aribah on 05/10/24.
+//
+
+#include <iostream>
+#define first(L) L.first
+#define next(P) P->next
+#define info(P) P->info
+
+using namespace std;
+
+typedef int infotype;
+typedef struct elmlist *address;
+
+struct elmlist {
+    infotype info;
+    address next;
+};
+
+struct List {
+    address first;
+};
+
+void createList_103032330156(List &L);
+address allocate_103032330156(infotype x);
+void insertFirst_103032330156(List &L, address P);
+void printInfo_103032330156(List L);
+
+
+
+
+
+//
+//  listt.cpp
+//  tpmod4
+//
+//  Created by Dhona Aribah on 05/10/24.
+//
+
+#include <iostream>
+#include "list.h"
+
+using namespace std;
+
+void createList_103032330156(List &L){
+//    this procedure will initialize the list L
+    first(L) = NULL;
+
+}
+
+address allocate_103032330156(infotype x){
+    address p = new elmlist;
+    info(p) = x;
+    next(p) = NULL;
+    
+    return p;
+}
+
+void insertFirst_103032330156(List &L, address P){
+//    TODO: Insert the new element pointed
+//            by P to the first of list L
+    next(P) = first(L);
+    first(L) = P;
+}
+
+void printInfo_103032330156(List L){
+    address p = first(L);
+    while (p != NULL) {
+        cout << info(p) << ", ";
+        p = next(p);
+    }
+    cout << endl;
+}
+
+
+
+
+
+
+
+//
+//  main.cpp
+//  tpmod4
+//
+//  Created by Dhona Aribah on 05/10/24.
+//
+
+#include <iostream>
+#include "list.h"
+
+using namespace std;
+
+int main() {
+    List L;
+    int masukkan = 0;
+    address P;
+    
+    createList_103032330156(L);
+    cout << "Masukkan angka pertama: ";
+    cin >> masukkan;
+    P = allocate_103032330156(masukkan);
+    insertFirst_103032330156(L,P);
+    printInfo_103032330156(L);
+    
+    cout << "Masukkan angka kedua: ";
+    cin >> masukkan;
+    P = allocate_103032330156(masukkan);
+    insertFirst_103032330156(L,P);
+    printInfo_103032330156(L);
+    
+    cout << "Masukkan angka ketiga: ";
+    cin >> masukkan;
+    P = allocate_103032330156(masukkan);
+    insertFirst_103032330156(L,P);
+    printInfo_103032330156(L);
+}
