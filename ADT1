@@ -1,0 +1,69 @@
+//
+//  mahasiswa.h
+//  latihanADT1
+//
+//  Created by Dhona Aribah on 09/10/24.
+//
+
+#ifndef mahasiswa_h
+#define mahasiswa_h
+
+using namespace std;
+
+struct mahasiswa {
+    char nama[10];
+    int nilai1, nilai2;
+};
+
+void inputMhs(mahasiswa &m);
+float rata2(mahasiswa m);
+
+#endif /* mahasiswa_h */
+
+
+
+//
+//  mahasiswa.cpp
+//  latihanADT1
+//
+//  Created by Dhona Aribah on 09/10/24.
+//
+#include <iostream>
+#include "mahasiswa.h"
+
+using namespace std;
+
+void inputMhs(mahasiswa &m){
+    cout << "input nama mahasiswa: " << endl;
+    cin >> (m).nama;
+    cout << "input nilai 1: " << endl;
+    cin >> (m).nilai1;
+    cout << "input nilai 2: " << endl;
+    cin >> (m).nilai2;
+    
+}
+
+float rata2(mahasiswa m){
+    return (m.nilai1 + m.nilai2) / 2;
+}
+
+
+
+//
+//  main.cpp
+//  latihanADT1
+//
+//  Created by Dhona Aribah on 09/10/24.
+//
+
+#include <iostream>
+#include "mahasiswa.cpp"
+
+using namespace std;
+
+int main(){
+    mahasiswa mhs;
+    inputMhs(mhs);
+    cout << "rata-rata nilai mahasiswa " << "adalah " << rata2(mhs) << endl;
+    
+}
