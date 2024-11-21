@@ -1,0 +1,33 @@
+#include <iostream>
+
+using namespace std;
+
+int kuadrat(int n) {
+    int z;
+    z = n * n;
+    return z;
+}
+
+int tambah(int a, int b){
+    int c;
+    c = a + b;
+    return c;
+}
+
+
+int main(){
+    int input, hasilKuadrat, hasilJumlah, x, y;
+    cout << "masukkan bilangan kuadrat: " <<  endl;
+    cin >> input;
+    hasilKuadrat = kuadrat(input);
+    cout << "hasil bilangan kuadrat: " << hasilKuadrat << endl;
+    
+    cout << "masukkan bilangan 1: " << endl;
+    cin >> x;
+    cout << "masukkan bilangan 2: " << endl;
+    cin >> y;
+    hasilJumlah = tambah(x, y);
+    cout << "hasil jumlah: " << hasilJumlah << endl;
+    
+    return 0;
+}
